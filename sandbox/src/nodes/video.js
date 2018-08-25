@@ -1,6 +1,9 @@
 (function() {
 
   var callbacks = [], videos;//, reveal;
+  var image = document.createElement('canvas');
+  image.width = 16;
+  image.height = 16;
 
   var Video = Sandbox.Nodes.Video = function() {
 
@@ -10,12 +13,13 @@
 
     this.destroy();
 
-    this.outputs.texture = this.buffer = window.texture = new THREE.Texture();
+    this.outputs.texture = this.buffer = new THREE.Texture(image);
     this.outputs.texture.__parentNode = this;
     this.outputs.texture.minFilter = THREE.LinearFilter;
     this.outputs.texture.magFilter = THREE.LinearFilter;
     this.outputs.texture.format = THREE.RGBFormat;
     this.outputs.texture.generateMipmaps = false;
+    this.outputs.texture.needsUpdate = true;
 
     var update = _.bind(function() {
       var src = this.getParam('source');
@@ -40,7 +44,7 @@
     this.html = _.template(Sandbox.Graph.Templates.canvas, this)
       + _.template(Sandbox.Graph.Templates.description, this);
 
-    this.destructables.push(this.texture);
+    this.destructables.push(this.buffer);
 
   };
 
@@ -126,6 +130,7 @@
     video.setAttribute('crossorigin', '');
 
     video.volume = 0.0;
+    video.loop = true;
 
     video.addEventListener('canplaythrough', function() {
       file.available();
@@ -139,10 +144,10 @@
     // source.setAttribute('src', file.value.replace('mp4', 'webm'));
     // video.appendChild(source);
 
-    // var container = document.querySelector('.scripts');
-    // if (_.isElement(container)) {
-    //   container.appendChild(video);
-    // }
+    var container = document.querySelector('.scripts');
+    if (_.isElement(container)) {
+      container.appendChild(video);
+    }
 
     file.video = video;
 
