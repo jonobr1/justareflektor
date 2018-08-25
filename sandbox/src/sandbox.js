@@ -70,6 +70,9 @@
       height: this.height + 'px'
     });
 
+    this.loader = new Sandbox.Loader(this)
+      .appendTo(this.domElement);
+
     this.graph = new Sandbox.Graph({
       width: this.width,
       height: this.height,
@@ -201,6 +204,7 @@
     appendTo: function(elem) {
 
       elem.appendChild(this.domElement);
+
       this.container = elem;
 
       if (this.json) {
@@ -341,11 +345,11 @@
       this.width = Math.min(width, 2048); // Webgl Constraints.
       this.height = this.width / Sandbox.aspectRatio; // Math.min(height, 2048);
 
-      // _.each(this.nodes, function(node) {
-      //   if (_.isFunction(node.resize)) {
-      //     node.resize(this.width, this.height);
-      //   }
-      // }, this);
+      _.each(this.nodes, function(node) {
+        if (_.isFunction(node.resize)) {
+          node.resize(this.width, this.height);
+        }
+      }, this);
 
       this.graph.setSize(this.width, this.height);
       this.viewport.setSize(this.width * 2, this.height);
@@ -467,6 +471,7 @@
 
     loadJSON: function() {
 
+      this.loader.clear();
       this.clear();
 
       var json = arguments[0];

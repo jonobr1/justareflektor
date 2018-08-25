@@ -18,6 +18,8 @@ var files = [
   path.resolve(__dirname, "../src/graph.js"),
   path.resolve(__dirname, "../src/inspector.js"),
   path.resolve(__dirname, "../src/node.js"),
+  path.resolve(__dirname, "../src/asset.js"),
+  path.resolve(__dirname, "../src/loader.js"),
   path.resolve(__dirname, "../src/nodes/preview.js"),
   path.resolve(__dirname, "../src/nodes/shaders/Composite3Shader.js"),
   path.resolve(__dirname, "../src/nodes/shaders/AddBlendShader.js"),
@@ -35,6 +37,7 @@ var files = [
   path.resolve(__dirname, "../src/nodes/shaders/InvertShader.js"),
   path.resolve(__dirname, "../src/nodes/drawingBlur.js"),
   path.resolve(__dirname, "../src/nodes/suminagashi.js"),
+  path.resolve(__dirname, "../src/nodes/video.js"),
   path.resolve(__dirname, "../src/nodes/webcam.js"),
   path.resolve(__dirname, "../src/nodes/planes.js"),
   path.resolve(__dirname, "../src/nodes/godRays.js"),
@@ -50,10 +53,10 @@ var files = [
 ];
 
 // Concatenated
-new compressor.minify({
-  type: 'no-compress',
-  fileIn: files,
-  fileOut: path.resolve(__dirname, '../build/sandbox.js'),
+compressor.minify({
+  compressor: 'no-compress',
+  input: files,
+  output: path.resolve(__dirname, '../build/sandbox.js'),
   callback: function(e) {
     if (!e) {
       console.log('concatenation complete');
@@ -64,10 +67,10 @@ new compressor.minify({
 });
 
 // Minified
-new compressor.minify({
-  type: 'gcc',
-  fileIn: files,
-  fileOut: path.resolve(__dirname, '../build/sandbox.min.js'),
+compressor.minify({
+  compressor: 'uglifyjs',
+  input: files,
+  output: path.resolve(__dirname, '../build/sandbox.min.js'),
   callback: function(e){
     if (!e) {
       console.log('minified complete');

@@ -6,58 +6,18 @@
   <body>
     <div id="content"></div>
     <div class="scripts">
-      <!-- <script src="./build/sandbox.js"></script> -->
-      <script src="./third-party/url.js"></script>
-      <script src="./third-party/jquery.js"></script>
-      <script src="./third-party/two.js"></script>
-      <script src="./third-party/noise.js"></script>
-      <script src="./third-party/perlin.js"></script>
-      <script src="./third-party/big-screen.js"></script>
-      <script src="./third-party/three.js"></script>
-      <script src="./third-party/OBJLoader.js"></script>
-      <script src="./third-party/three.xhrloader.js"></script>
-      <script src="./src/sandbox.js"></script>
-      <script src="./src/viewport.js"></script>
-      <script src="./src/graph.js"></script>
-      <script src="./src/inspector.js"></script>
-      <script src="./src/node.js"></script>
-      <script src="./src/nodes/preview.js"></script>
-      <script src="./src/nodes/shaders/Composite3Shader.js"></script>
-      <script src="./src/nodes/shaders/AddBlendShader.js"></script>
-      <script src="./src/nodes/shaders/BlendShader.js"></script>
-      <script src="./src/nodes/shaders/ConvolutionShader.js"></script>
-      <script src="./src/nodes/shaders/CopyShader.js"></script>
-      <script src="./src/nodes/shaders/GodRaysShader.js"></script>
-      <script src="./src/nodes/shaders/RefractionShader.js"></script>
-      <script src="./src/nodes/shaders/drawingBlurShader.js"></script>
-      <script src="./src/nodes/shaders/bumpToNormalShader.js"></script>
-      <script src="./src/nodes/shaders/videoFeedbackShader.js"></script>
-      <script src="./src/nodes/shaders/vibranceShader.js"></script>
-      <script src="./src/nodes/shaders/OffsetBlurShader.js"></script>
-      <script src="./src/nodes/shaders/NoiseShader.js"></script>
-      <script src="./src/nodes/shaders/InvertShader.js"></script>
-      <script src="./src/nodes/drawingBlur.js"></script>
-      <script src="./src/nodes/suminagashi.js"></script>
-      <script src="./src/nodes/webcam.js"></script>
-      <script src="./src/nodes/planes.js"></script>
-      <script src="./src/nodes/godRays.js"></script>
-      <script src="./src/nodes/bloom.js"></script>
-      <script src="./src/nodes/blur.js"></script>
-      <script src="./src/nodes/invert.js"></script>
-      <script src="./src/nodes/noise.js"></script>
-      <script src="./src/nodes/bumpToNormal.js"></script>
-      <script src="./src/nodes/refraction.js"></script>
-      <script src="./src/nodes/videoFeedback.js"></script>
-      <script src="./src/nodes/vibrance.js"></script>
-      <script src="./src/nodes/composite3.js"></script>
+      <script src="./build/sandbox.js"></script>
       <script>
 
           var sandbox = new Sandbox({
-            width: 640,
-            height: 480,
-            size: 25,
-            // defaultStyles: false
+            // width: 640,
+            // height: 480,
+            size: 25
           }).appendTo(document.querySelector('#content'));
+
+          sandbox.loadJSON({"output":{"id":1376350967933,"position":{"x":800,"y":275}},"connections":[{"input":{"id":1376526778799,"property":"mask"},"output":{"id":1376526770052,"property":"buffer"}},{"input":{"id":1376526778799,"property":"video"},"output":{"id":1376526764556,"property":"texture"}},{"input":{"id":1376526787327,"property":"video"},"output":{"id":1376526778799,"property":"buffer"}},{"input":{"id":1376526787327,"property":"mask"},"output":{"id":1376526770052,"property":"buffer"}},{"input":{"id":1376350967933,"property":"buffer"},"output":{"id":1376526787327,"property":"buffer"}}],"nodes":[{"property":"Video","id":1376526764556,"params":{"source":"/media/reflektor_3.mp4"},"position":{"x":175,"y":100}},{"property":"DrawingBlur","id":1376526770052,"params":{"size":0.3,"sizeRandomness":0.4,"intensity":0.9,"fade":0.01},"position":{"x":150,"y":450}},{"property":"VideoFeedback","id":1376526778799,"params":{},"position":{"x":350,"y":250}},{"property":"Vibrance","id":1376526787327,"params":{"effectAlpha":0.5},"position":{"x":550,"y":350}}]});
+
+          sandbox.showViewport();
 
           var loop = function() {
             sandbox.update();
