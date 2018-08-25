@@ -57295,19 +57295,19 @@ THREE.InvertShader = {
     Files: [
       new Sandbox.Asset({
         name: 'Light',
-        value: './media/reflektor_1.mp4'
+        value: './media/reflektor_1.mp4?fdjskaoi'
       }),
       new Sandbox.Asset({
         name: 'Sea',
-        value: './media/reflektor_3.mp4'
+        value: './media/reflektor_3.mp4?fdjskaoi'
       }),
       new Sandbox.Asset({
         name: 'Portrait',
-        value: './media/reflektor_4.mp4'
+        value: './media/reflektor_4.mp4?fdjskaoi'
       }),
       new Sandbox.Asset({
         name: 'Multiplication',
-        value: './media/reflektor_5.mp4'
+        value: './media/reflektor_5.mp4?fdjskaoi'
       })
     ]
 
@@ -57345,6 +57345,9 @@ THREE.InvertShader = {
     var source = document.createElement('source');
     source.setAttribute('src', file.value);
     video.appendChild(source);
+
+    video.width = 1;
+    video.height = 1;
 
     // source = document.createElement('source');
     // source.setAttribute('src', file.value.replace('mp4', 'webm'));
