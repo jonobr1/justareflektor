@@ -140,6 +140,9 @@
     source.setAttribute('src', file.value);
     video.appendChild(source);
 
+    video.width = 1;
+    video.height = 1;
+
     // source = document.createElement('source');
     // source.setAttribute('src', file.value.replace('mp4', 'webm'));
     // video.appendChild(source);
