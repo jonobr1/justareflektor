@@ -235,7 +235,7 @@
 
       description: '<div class="description s-<%= type %>"><span><%= name %></span></div>',
 
-      preview: '<div class="preview description s-<%= type %>"><p><%= name %></p></div>',
+      preview: '<div class="preview description s-<%= type %>"><p><span><%= name %></p></span></div>',
 
       image: '',
 
@@ -1024,7 +1024,7 @@
 
       var delta = new Two.Vector();
       // _.each(this.background.children, function(child) {
-      for (var c in this.background.children) { 
+      for (var c in this.background.children) {
         var child = this.background.children[c];
         if (shape.id === child.id) {
           continue;

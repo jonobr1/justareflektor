@@ -6,13 +6,57 @@
   <body>
     <div id="content"></div>
     <div class="scripts">
-      <script src="./build/sandbox.js"></script>
+      <!-- <script src="./build/sandbox.js"></script> -->
+      <script src="./third-party/url.js"></script>
+      <script src="./third-party/jquery.js"></script>
+      <script src="./third-party/two.js"></script>
+      <script src="./third-party/noise.js"></script>
+      <script src="./third-party/perlin.js"></script>
+      <script src="./third-party/big-screen.js"></script>
+      <script src="./third-party/three.js"></script>
+      <script src="./third-party/OBJLoader.js"></script>
+      <script src="./third-party/three.xhrloader.js"></script>
+      <script src="./src/sandbox.js"></script>
+      <script src="./src/viewport.js"></script>
+      <script src="./src/graph.js"></script>
+      <script src="./src/inspector.js"></script>
+      <script src="./src/node.js"></script>
+      <script src="./src/nodes/preview.js"></script>
+      <script src="./src/nodes/shaders/Composite3Shader.js"></script>
+      <script src="./src/nodes/shaders/AddBlendShader.js"></script>
+      <script src="./src/nodes/shaders/BlendShader.js"></script>
+      <script src="./src/nodes/shaders/ConvolutionShader.js"></script>
+      <script src="./src/nodes/shaders/CopyShader.js"></script>
+      <script src="./src/nodes/shaders/GodRaysShader.js"></script>
+      <script src="./src/nodes/shaders/RefractionShader.js"></script>
+      <script src="./src/nodes/shaders/drawingBlurShader.js"></script>
+      <script src="./src/nodes/shaders/bumpToNormalShader.js"></script>
+      <script src="./src/nodes/shaders/videoFeedbackShader.js"></script>
+      <script src="./src/nodes/shaders/vibranceShader.js"></script>
+      <script src="./src/nodes/shaders/OffsetBlurShader.js"></script>
+      <script src="./src/nodes/shaders/NoiseShader.js"></script>
+      <script src="./src/nodes/shaders/InvertShader.js"></script>
+      <script src="./src/nodes/drawingBlur.js"></script>
+      <script src="./src/nodes/suminagashi.js"></script>
+      <script src="./src/nodes/webcam.js"></script>
+      <script src="./src/nodes/planes.js"></script>
+      <script src="./src/nodes/godRays.js"></script>
+      <script src="./src/nodes/bloom.js"></script>
+      <script src="./src/nodes/blur.js"></script>
+      <script src="./src/nodes/invert.js"></script>
+      <script src="./src/nodes/noise.js"></script>
+      <script src="./src/nodes/bumpToNormal.js"></script>
+      <script src="./src/nodes/refraction.js"></script>
+      <script src="./src/nodes/videoFeedback.js"></script>
+      <script src="./src/nodes/vibrance.js"></script>
+      <script src="./src/nodes/composite3.js"></script>
       <script>
 
           var sandbox = new Sandbox({
             width: 640,
             height: 480,
-            size: 25
+            size: 25,
+            // defaultStyles: false
           }).appendTo(document.querySelector('#content'));
 
           var loop = function() {

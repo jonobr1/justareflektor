@@ -1,0 +1,23 @@
+{
+  "name": "just-a-reflektor-sandbox",
+  "version": "1.0.0",
+  "description": "Node Based Editor for composing effects for the interactive music video, Just A Reflektor",
+  "main": "index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "graph",
+    "editor",
+    "two.js",
+    "three.js",
+    "effects",
+    "vfx",
+    "composer"
+  ],
+  "author": "@jonobr1",
+  "license": "MIT",
+  "devDependencies": {
+    "node-minify": "^3.4.0"
+  }
+}
