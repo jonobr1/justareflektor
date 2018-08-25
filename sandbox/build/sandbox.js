@@ -57386,7 +57386,7 @@ THREE.InvertShader = {
   });
 
   function isPlaying(clip) {
-    return clip.readyState === 4 && !clip.paused;
+    return clip.readyState >= clip.HAVE_CURRENT_DATA && !clip.paused;
   }
 
 })();
