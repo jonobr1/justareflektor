@@ -34,7 +34,7 @@
             return;
           }
           var file = Video.getAssetBySrc(this.getParam('source'));
-          if (!_.isNull(file)) {
+          if (file) {
             file.ready(this.sandbox, update);
           }
         }, this)
