@@ -30,7 +30,9 @@
             return;
           }
           var file = Video.getAssetBySrc(this.getParam('source'));
-          file.ready(this.sandbox, update);
+          if (!_.isNull(file)) {
+            file.ready(this.sandbox, update);
+          }
         }, this)
       }
     };
