@@ -57240,6 +57240,7 @@ THREE.InvertShader = {
             return;
           }
           var file = Video.getAssetBySrc(this.getParam('source'));
+          console.log(file, this.getParam('source'));
           if (file) {
             file.ready(this.sandbox, update);
           }
@@ -57295,19 +57296,19 @@ THREE.InvertShader = {
     Files: [
       new Sandbox.Asset({
         name: 'Light',
-        value: './media/reflektor_1.mp4?fdjskaoi'
+        value: './media/reflektor_1.mp4'
       }),
       new Sandbox.Asset({
         name: 'Sea',
-        value: './media/reflektor_3.mp4?fdjskaoi'
+        value: './media/reflektor_3.mp4'
       }),
       new Sandbox.Asset({
         name: 'Portrait',
-        value: './media/reflektor_4.mp4?fdjskaoi'
+        value: './media/reflektor_4.mp4'
       }),
       new Sandbox.Asset({
         name: 'Multiplication',
-        value: './media/reflektor_5.mp4?fdjskaoi'
+        value: './media/reflektor_5.mp4'
       })
     ]
 
